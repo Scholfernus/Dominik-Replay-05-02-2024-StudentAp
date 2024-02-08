@@ -20,4 +20,15 @@ public class StudentService {
     public List<StudentModel> getStudentList(){
         return studentRepository.findAll();
     }
+    public StudentModel getStudentById(Long id) {
+        return studentRepository.findById(id).orElse(null);
+    }
+    public void saveEditStudent(StudentModel student, Long id){
+        student.setId(id);
+        studentRepository.save(student);
+    }
+
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
 }
