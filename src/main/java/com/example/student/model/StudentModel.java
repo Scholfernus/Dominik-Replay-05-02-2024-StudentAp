@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -26,4 +28,7 @@ public class StudentModel {
     @Size(min = 3)
     @Column(name = "start")
     private String start;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "studentModel")
+    private Set<TaskModel> tasks = new HashSet<>();
 }
