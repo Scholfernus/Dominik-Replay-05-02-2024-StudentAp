@@ -48,8 +48,8 @@ public class AuthConfig {
                 .usernameParameter("username") // nadajemy nazwę jaka będzie jako name w inpucie loginu formularza
                 .passwordParameter("password")// nadajemy nazwę jaka będzie jako name w inpucie hasła formularza
                 .loginProcessingUrl("/login")
-                .failureForwardUrl("/login?error") // co sięstanie w momencie wpisania błędnych danych
-                .defaultSuccessUrl("/")// co sięstanie w momencie prawidłowego uwierzytelnienia
+                .failureForwardUrl("/login?error") // co się stanie w momencie wpisania błędnych danych
+                .defaultSuccessUrl("/")// co się stanie w momencie prawidłowego uwierzytelnienia
                 .and()
                 .logout() // mówimy springowi, że przechodzimy do obsłużenia logout
                 .logoutSuccessUrl("/login")
